@@ -1,0 +1,11 @@
+@import '~vuetify/src/styles/styles.sass';
+
+$material-dark: map-merge($material-dark, (
+    'background': map-get($blue-grey, 'darken-3'),
+    'cards': map-get($blue-grey, 'darken-4'),
+    'table': (
+        'active': map-get($blue-grey, 'darken-1'),
+        'hover': map-get($blue-grey, 'base'),
+        'group': map-get($blue-grey, 'darken-1')
+    ),
+));
