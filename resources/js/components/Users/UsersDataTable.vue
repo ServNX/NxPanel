@@ -1,31 +1,15 @@
 <template>
   <v-data-table
-      v-model="selected"
-      :headers="headers"
-      :items="items"
-      single-expand
-      :expanded.sync="expanded"
-      show-expand
-      item-key="id"
-      show-select
-      class="user-data-table elevation-1"
+    v-model="selected"
+    :headers="headers"
+    :items="items"
+    single-expand
+    :expanded.sync="expanded"
+    show-expand
+    item-key="id"
+    show-select
+    class="user-data-table elevation-1"
   >
-    <!--
-    Web Domains:2 / 2
-    Email:servnx@gmail.com
-    DNS Domains:1 / 100
-    Package:default
-    Disk:85 mb
-    Mail Domains:1 / 100
-    SSH Access:bash
-    Web: 83 mb Databases: 1 mb
-    Databases:1 / 5
-    IP Addresses:0
-    Mail: 0 mb User Directories: 1 mb
-    Cron Jobs:0 / 20
-    Backups:5 / 5
-    Name Servers:ns1.servnx.com ns2.servnx.com
-        -->
     <template v-slot:expanded-item="{ headers, item }">
       <td :colspan="headers.length" class="expanded-data">
         <v-container fluid>
@@ -103,10 +87,10 @@
             value: 'id',
             sortable: false
           },
-          {text: 'Username', value: 'username'},
-          {text: 'First Name', value: 'first_name'},
-          {text: 'Last Name', value: 'last_name'},
-          {text: 'Package', value: 'package_name'},
+          { text: 'Username', value: 'username' },
+          { text: 'First Name', value: 'first_name' },
+          { text: 'Last Name', value: 'last_name' },
+          { text: 'Package', value: 'package_name' },
         ],
         items: [
           {
@@ -174,9 +158,9 @@
             backups_total: 5
           }
         ]
-      };
+      }
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

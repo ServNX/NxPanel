@@ -10,8 +10,8 @@
 </template>
 
 <script>
-  import ToolbarEvents from '../mixins/page-toolbar-events';
-  import Packages from './Dashboard/Packages';
+  import ToolbarEvents from '../../mixins/page-toolbar-events'
+  import Packages from './Packages'
 
   export default {
     name: 'dashboard',

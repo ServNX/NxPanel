@@ -1,5 +1,5 @@
-import Dashboard from '../../views/Dashboard';
-import Users from '../../views/Users';
+import Dashboard from '../../views/Dashboard/index'
+import Users from '../../views/Users/index'
 
 export default {
   namespaced: true,
