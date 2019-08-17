@@ -164,5 +164,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+  .expanded-data {
+    background-color: #607D8B;
+  }
 </style>
