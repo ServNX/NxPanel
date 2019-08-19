@@ -21,12 +21,12 @@
       return {
         toolbar_items: [
           {
-            name: 'add-Package',
+            name: 'add-package',
             item: 'Add Package',
             icon: 'mdi-package-variant',
             color: 'secondary',
             onClick: () => {
-              this.user_dialog = true
+
             }
           },
         ]
