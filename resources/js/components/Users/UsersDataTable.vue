@@ -81,83 +81,13 @@
         expanded: [],
         selected: [],
         headers: [
-          {
-            text: 'User ID #',
-            align: 'left',
-            value: 'id',
-            sortable: false
-          },
+          {text: 'User ID #', align: 'left', value: 'id'},
           { text: 'Username', value: 'username' },
           { text: 'First Name', value: 'first_name' },
           { text: 'Last Name', value: 'last_name' },
           { text: 'Package', value: 'package_name' },
         ],
-        items: [
-          {
-            id: 1001,
-            username: 'Poppabear',
-            first_name: 'Mike',
-            last_name: 'Wiley',
-            package_name: 'Basic',
-            domains: 4,
-            domains_total: 10,
-            emails: 10,
-            emails_total: 20,
-            email: 'servnx@gmail.com',
-            dns_domains: 1,
-            dns_records: 24,
-            dns_total: 100,
-            disk_space: 85,
-            disk_space_total: 0,
-            ssh_shell: 'bash',
-            databases: 2,
-            databases_total: 10,
-            backups: 5,
-            backups_total: 5
-          },
-          {
-            id: 2346,
-            username: 'DGRoofing',
-            first_name: 'Gerri',
-            last_name: 'Howard',
-            package_name: 'Premium',
-            domains: 4,
-            domains_total: 10,
-            emails: 10,
-            emails_total: 20,
-            email: 'gerri@gmail.com',
-            dns: 1,
-            dns_total: 100,
-            disk_space: 85,
-            disk_space_total: 0,
-            ssh_shell: 'bash',
-            databases: 2,
-            databases_total: 10,
-            backups: 5,
-            backups_total: 5
-          },
-          {
-            id: 3534,
-            username: 'ServNX LLC',
-            first_name: 'Mike',
-            last_name: 'Wiley',
-            package_name: 'Premium',
-            domains: 4,
-            domains_total: 10,
-            emails: 10,
-            emails_total: 20,
-            email: 'servnx@gmail.com',
-            dns: 1,
-            dns_total: 100,
-            disk_space: 85,
-            disk_space_total: 0,
-            ssh_shell: 'bash',
-            databases: 2,
-            databases_total: 10,
-            backups: 5,
-            backups_total: 5
-          }
-        ]
+        items: this.$store.getters['users/users']
       }
     }
   }
