@@ -17,7 +17,7 @@ class CreateDnsTable extends Migration
     /* Domains hasMany Dns */
     Schema::create('dns', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('domain_id');
+      $table->bigInteger('domain_id')->unsigned();
       $table->timestamps();
     });
   }

@@ -17,7 +17,7 @@ class CreateBackupsTable extends Migration
     /* Users hasMany Backups */
     Schema::create('backups', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('users');
+      $table->bigInteger('user_id')->unsigned();
       $table->timestamps();
     });
   }

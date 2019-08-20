@@ -17,7 +17,7 @@ class CreateDatabasesTable extends Migration
     /* Users hasMany Databases */
     Schema::create('databases', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('user_id');
+      $table->bigInteger('user_id')->unsigned();
       $table->timestamps();
     });
   }

@@ -15,7 +15,6 @@ class CreateServersTable extends Migration
   {
     Schema::create('servers', function (Blueprint $table) {
       $table->bigIncrements('id');
-
       $table->timestamps();
     });
   }

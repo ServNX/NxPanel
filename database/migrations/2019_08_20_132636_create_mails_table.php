@@ -17,7 +17,7 @@ class CreateMailsTable extends Migration
     /* Domains hasMany Mail */
     Schema::create('mails', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('domain_id');
+      $table->bigInteger('domain_id')->unsigned();
       $table->timestamps();
     });
   }

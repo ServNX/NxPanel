@@ -17,7 +17,7 @@ class CreateWebsitesTable extends Migration
     /* Domains hasOne Website */
     Schema::create('websites', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->integer('domain_id');
+      $table->bigInteger('domain_id')->unsigned();
       $table->timestamps();
     });
   }
