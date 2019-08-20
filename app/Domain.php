@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Domain extends Model
 {
+  public function server()
+  {
+    return $this->hasOneThrough(Server::class, User::class);
+  }
+
   public function user()
   {
     return $this->belongsTo(User::class);
