@@ -15,4 +15,14 @@ class Template extends Model
   {
     return $this->hasOne(TemplateType::class);
   }
+
+  public function websites()
+  {
+    return $this->hasMany(Website::class);
+  }
+
+  public function dns()
+  {
+    return $this->hasMany(Dns::class);
+  }
 }

@@ -15,9 +15,12 @@ class CreateWebsitesTable extends Migration
   {
     /* Website belongTo a Domain */
     /* Domains hasOne Website */
+    /* Website hasOne Template */
+    /* Template hasMany Websites */
     Schema::create('websites', function (Blueprint $table) {
       $table->bigIncrements('id');
       $table->bigInteger('domain_id')->unsigned();
+      $table->bigInteger('template_id')->unsigned();
       $table->timestamps();
     });
   }

@@ -15,4 +15,9 @@ class Dns extends Model
   {
     return $this->belongsTo(Domain::class);
   }
+
+  public function template()
+  {
+    return $this->hasOne(Template::class);
+  }
 }
