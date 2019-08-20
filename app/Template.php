@@ -13,7 +13,7 @@ class Template extends Model
 
   public function type()
   {
-    return $this->hasOne(TemplateType::class);
+    return $this->belongsTo(TemplateType::class);
   }
 
   public function websites()
