@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWebsTable extends Migration
+class CreateWebsitesTable extends Migration
 {
   /**
    * Run the migrations.
@@ -13,9 +13,9 @@ class CreateWebsTable extends Migration
    */
   public function up()
   {
-    /* Webs belongTo a Domain */
-    /* Domains hasOne Web */
-    Schema::create('webs', function (Blueprint $table) {
+    /* Website belongTo a Domain */
+    /* Domains hasOne Website */
+    Schema::create('websites', function (Blueprint $table) {
       $table->bigIncrements('id');
       $table->integer('domain_id');
       $table->timestamps();

@@ -11,9 +11,9 @@ class Domain extends Model
     return $this->belongsTo(User::class);
   }
 
-  public function web()
+  public function website()
   {
-    return $this->hasOne(Web::class);
+    return $this->hasOne(Website::class);
   }
 
   public function mails()
