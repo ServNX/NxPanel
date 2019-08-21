@@ -1,8 +1,8 @@
 <template>
   <div>
     <page-toolbar
-      @onClick="onClick"
-      :items="toolbar_items"
+        @onClick="onClick"
+        :items="toolbar_items"
     />
 
     <PackagesDataTable/>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  import ToolbarEvents from '../mixins/page-toolbar-events'
-  import PackagesDataTable from '../components/Packages/PackagesDataTable'
+  import ToolbarEvents from '../mixins/page-toolbar-events';
+  import PackagesDataTable from '../components/Packages/PackagesDataTable';
 
   export default {
     name: 'packages',
     mixins: [ToolbarEvents],
-    components: { PackagesDataTable },
+    components: {PackagesDataTable},
     data () {
       return {
         toolbar_items: [
@@ -30,9 +30,9 @@
             }
           },
         ]
-      }
+      };
     }
-  }
+  };
 </script>
 
 <style scoped>

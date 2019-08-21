@@ -6,29 +6,29 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateDomainsTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    /* A Domain belongsTo a User */
-    /* A User hasMany Domains */
-    Schema::create('domains', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->bigInteger('user_id')->unsigned();
-      $table->timestamps();
-    });
-  }
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        /* A Domain belongsTo a User */
+        /* A User hasMany Domains */
+        Schema::create('domains', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->timestamps();
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('domains');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('domains');
+    }
 }

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class TemplateType extends Model
 {
-  public function templates()
-  {
-    return $this->hasMany(Template::class);
-  }
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
 }

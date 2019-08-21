@@ -16,9 +16,9 @@
 </template>
 
 <script>
-  import ToolbarEvents from '../mixins/page-toolbar-events'
-  import NewUserDialog from '../components/Users/NewUserDialog'
-  import UserDataTable from '../components/Users/UsersDataTable'
+  import ToolbarEvents from '../mixins/page-toolbar-events';
+  import NewUserDialog from '../components/Users/NewUserDialog';
+  import UserDataTable from '../components/Users/UsersDataTable';
 
   export default {
     name: 'users',
