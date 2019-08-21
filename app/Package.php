@@ -16,17 +16,17 @@ class Package extends Model
         return $this->hasOneThrough(Server::class, User::class);
     }
 
-    public function web_template()
+    public function webTemplate()
     {
         return $this->belongsTo(Template::class);
     }
 
-    public function dns_template()
+    public function dnsTemplate()
     {
         return $this->belongsTo(Template::class);
     }
 
-    public function backend_template()
+    public function backendTemplate()
     {
         return $this->belongsTo(Template::class);
     }
