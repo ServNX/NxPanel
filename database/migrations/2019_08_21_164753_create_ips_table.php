@@ -17,7 +17,7 @@ class CreateIpsTable extends Migration
         /* Server hasMany IPs */
         Schema::create('ips', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id');
+            $table->bigInteger('server_id')->unsigned();
             $table->string('value');
             $table->timestamps();
         });
