@@ -6,24 +6,24 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateServersTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('servers', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->string('name')->unique();
-      $table->string('hostname')->unique();
-      $table->string('os');
-      $table->string('dist');
-      $table->float('load_avg')->default(0.00);
-      $table->integer('uptime')->default(0);
-      $table->timestamps();
-    });
-  }
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('servers', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('name')->unique();
+            $table->string('hostname')->unique();
+            $table->string('os');
+            $table->string('dist');
+            $table->float('load_avg')->default(0.00);
+            $table->integer('uptime')->default(0);
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
