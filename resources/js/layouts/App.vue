@@ -18,9 +18,7 @@
   export default {
     name: 'app-component',
     data () {
-      return {
-
-      };
+      return {};
     }
   };
 </script>
