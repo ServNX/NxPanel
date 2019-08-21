@@ -18,8 +18,8 @@ class CreateServicesTable extends Migration
         /* Service belongsTo Status */
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id');
-            $table->integer('status_id');
+            $table->bigInteger('server_id')->unsigned();
+            $table->bigInteger('status_id')->unsigned();
             $table->string('name');
             $table->string('start');
             $table->string('restart');
