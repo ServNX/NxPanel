@@ -10,4 +10,24 @@ class Package extends Model
   {
     return $this->belongsToMany(User::class);
   }
+
+  public function server()
+  {
+    return $this->hasOneThrough(Server::class, User::class);
+  }
+
+  public function web_template()
+  {
+    return $this->belongsTo(Template::class);
+  }
+
+  public function dns_template()
+  {
+    return $this->belongsTo(Template::class);
+  }
+
+  public function backend_template()
+  {
+    return $this->belongsTo(Template::class);
+  }
 }
