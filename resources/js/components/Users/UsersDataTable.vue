@@ -1,14 +1,14 @@
 <template>
   <v-data-table
-    v-model="selected"
-    :headers="headers"
-    :items="items"
-    single-expand
-    :expanded.sync="expanded"
-    show-expand
-    item-key="id"
-    show-select
-    class="user-data-table elevation-1"
+      v-model="selected"
+      :headers="headers"
+      :items="items"
+      single-expand
+      :expanded.sync="expanded"
+      show-expand
+      item-key="id"
+      show-select
+      class="user-data-table elevation-1"
   >
     <template v-slot:expanded-item="{ headers, item }">
       <td :colspan="headers.length" class="expanded-data">
@@ -82,15 +82,15 @@
         selected: [],
         headers: [
           {text: 'User ID #', align: 'left', value: 'id'},
-          { text: 'Username', value: 'username' },
-          { text: 'First Name', value: 'first_name' },
-          { text: 'Last Name', value: 'last_name' },
-          { text: 'Package', value: 'package_name' },
+          {text: 'Username', value: 'username'},
+          {text: 'First Name', value: 'first_name'},
+          {text: 'Last Name', value: 'last_name'},
+          {text: 'Package', value: 'package_name'},
         ],
         items: this.$store.getters['users/users']
-      }
+      };
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
