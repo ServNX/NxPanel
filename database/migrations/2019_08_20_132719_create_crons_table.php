@@ -18,6 +18,15 @@ class CreateCronsTable extends Migration
         Schema::create('crons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
+            $table->string('command');
+
+            // Defaults to every hour
+            $table->string('minute')->default('0');
+            $table->string('hour')->default('*');
+            $table->string('day')->default('*');
+            $table->string('month')->default('*');
+            $table->string('day_of_week')->default('*');
+
             $table->timestamps();
         });
     }

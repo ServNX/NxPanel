@@ -21,10 +21,10 @@ class CreatePackagesTable extends Migration
             $table->string('shell')->default('no-login');
 
             // no plans on supporting more than 4 Nameservers
-            $table->string('ns_one')->default('ns1.domain.tld');
-            $table->string('ns_two')->default('ns2.domain.tld');
-            $table->string('ns_three')->default('ns3.domain.tld');
-            $table->string('ns_four')->default('ns4.domain.tld');
+            $table->string('ns_one');
+            $table->string('ns_two');
+            $table->string('ns_three')->nullable();
+            $table->string('ns_four')->nullable();
 
             // 0 = unlimited
             $table->integer('disk_quota')->default(200); // Mb

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMailsTable extends Migration
+class CreateDnsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateMailsTable extends Migration
      */
     public function up()
     {
-        // Mail belongsTo Domain
-        // Domains hasMany Mail
-        Schema::create('mails', function (Blueprint $table) {
+        Schema::create('dns_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
-            $table->string('catch_all')->default('/dev/null');
+            $table->string('value');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateMailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mails');
+        Schema::dropIfExists('dns_types');
     }
 }

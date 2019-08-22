@@ -21,6 +21,10 @@ class CreateDnsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('domain_id')->unsigned();
             $table->bigInteger('template_id')->unsigned();
+            $table->bigInteger('ip_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
+            $table->date('expires')->default(now()->addYear());
+            $table->integer('ttl')->default(14400);
             $table->timestamps();
         });
     }

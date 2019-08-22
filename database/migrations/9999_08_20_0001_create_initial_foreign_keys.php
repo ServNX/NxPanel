@@ -21,11 +21,13 @@ class CreateInitialForeignKeys extends Migration
         Schema::table('websites', function (Blueprint $table) {
             $table->foreign('domain_id')->references('id')->on('domains');
             $table->foreign('template_id')->references('id')->on('templates');
+            $table->foreign('ip_id')->references('id')->on('ips');
         });
 
         Schema::table('dns', function (Blueprint $table) {
             $table->foreign('domain_id')->references('id')->on('domains');
             $table->foreign('template_id')->references('id')->on('templates');
+            $table->foreign('ip_id')->references('id')->on('ips');
         });
 
         Schema::table('mails', function (Blueprint $table) {
@@ -75,6 +77,11 @@ class CreateInitialForeignKeys extends Migration
 
         Schema::table('ips', function (Blueprint $table) {
             $table->foreign('server_id')->references('id')->on('servers');
+        });
+
+        Schema::table('dns_records', function (Blueprint $table) {
+            $table->foreign('dns_id')->references('id')->on('dns');
+            $table->foreign('dns_type_id')->references('id')->on('dns_types');
         });
     }
 

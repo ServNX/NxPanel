@@ -11,8 +11,18 @@ class Mail extends Model
         return $this->hasOneThrough(User::class, Domain::class);
     }
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
     public function domain()
     {
         return $this->belongsTo(Domain::class);
+    }
+
+    public function accounts()
+    {
+        return $this->hasMany(MailAccount::class);
     }
 }

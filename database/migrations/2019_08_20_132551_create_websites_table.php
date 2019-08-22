@@ -21,6 +21,10 @@ class CreateWebsitesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('domain_id')->unsigned();
             $table->bigInteger('template_id')->unsigned();
+            $table->bigInteger('ip_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
+            $table->string('description')->nullable();
+            $table->integer('disk_quota')->default(0); // 0 = unlimited
             $table->timestamps();
         });
     }

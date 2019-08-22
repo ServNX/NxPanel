@@ -10,4 +10,9 @@ class Server extends Model
     {
         return $this->hasMany(Firewall::class);
     }
+
+    public function ips()
+    {
+        return $this->hasMany(Ip::class);
+    }
 }

@@ -18,6 +18,12 @@ class CreateFirewallsTable extends Migration
         Schema::create('firewalls', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('server_id')->unsigned();
+            $table->bigInteger('service_id')->unsigned();
+            $table->bigInteger('ip_id')->unsigned();
+            $table->string('action');
+            $table->string('protocol');
+            $table->string('port'); // type string to support range and comma separated values
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIpsTable extends Migration
+class CreateDnsRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateIpsTable extends Migration
      */
     public function up()
     {
-        // IPs belongsTo Server
-        // Server hasMany IPs
-
-        /*
-         * Ips do NOT have to belong to a Server
-         * For example, An IP can be from another server and being used for DNS records
-         */
-        Schema::create('ips', function (Blueprint $table) {
+        // DnsRecord belongsTo Dns
+        // Dns hasMany DnsRecords
+        // DnsRecord belongsTo DnsType
+        // DnsType hasMany DnsRecords
+        Schema::create('dns_records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id')->unsigned()->nullable();
+            $table->bigInteger('dns_id')->unsigned();
+            $table->bigInteger('dns_type_id')->unsigned(); // A or AAAA ... etc
+            $table->string('record');
             $table->string('value');
             $table->timestamps();
         });
@@ -35,6 +34,6 @@ class CreateIpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ips');
+        Schema::dropIfExists('dns_records');
     }
 }
