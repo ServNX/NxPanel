@@ -5,13 +5,13 @@ use App\User;
 
 class TestsDataSeeder extends Seeder
 {
-  /**
-   * Run the database seeds.
-   *
-   * @return void
-   */
-  public function run()
-  {
-    factory(User::class, 20)->create();
-  }
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        factory(User::class, 20)->create();
+    }
 }
