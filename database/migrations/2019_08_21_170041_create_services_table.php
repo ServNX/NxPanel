@@ -33,7 +33,6 @@ class CreateServicesTable extends Migration
         Schema::table('services', function (Blueprint $table) {
             $table->foreign('server_id')->references('id')->on('servers');
             $table->foreign('status_id')->references('id')->on('statuses');
-
         });
     }
 
