@@ -13,6 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('login', 'Auth/ApiAuthController@login');
+
+// Protected Routes
+Route::middleware('jwt.auth')->group(function () {
+
+    // Returns the currently authenticated user object
+    Route::get('me', function () {
+        return auth('api')->user();
+    });
+
 });

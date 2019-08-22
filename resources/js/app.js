@@ -1,15 +1,15 @@
-import './bootstrap';
-import store from './vuex/store';
+import './bootstrap'
+import store from './vuex/store'
 
-import vuetify from './plugins/vuetify';
-import router from './plugins/router.js';
+import vuetify from './plugins/vuetify'
+import router from './plugins/router.js'
 
-import App from './layouts/App';
+import App from './layouts/App'
 
-window.Vue = require('vue');
+window.Vue = require('vue')
 
-Vue.component('navigation', require('./components/Navigation').default);
-Vue.component('page-toolbar', require('./components/PageToolbar').default);
+Vue.component('navigation', require('./components/Navigation').default)
+Vue.component('page-toolbar', require('./components/PageToolbar').default)
 
 const app = new Vue({
   el: '#app',
@@ -17,6 +17,6 @@ const app = new Vue({
   vuetify,
   router,
   render: h => h(App),
-});
+})
 
-window.App = app;
+window.App = app

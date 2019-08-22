@@ -1,4 +1,4 @@
-import axios from '../../axios';
+import axios from '../../axios'
 
 export default {
   namespaced: true,
@@ -75,24 +75,24 @@ export default {
   },
   getters: {
     users (state) {
-      return state.users;
+      return state.users
     },
   },
   mutations: {
     SET_USERS (state, users) {
-      state.users = users;
+      state.users = users
     },
   },
   actions: {
-    FetchUsers ({commit, state}) {
+    FetchUsers ({ commit, state }) {
       return new Promise((resolve, reject) => {
         axios.get('/users').then(resp => {
-          commit('SET_USERS', resp.data);
-          resolve(resp.data);
+          commit('SET_USERS', resp.data)
+          resolve(resp.data)
         }).catch(err => {
-          reject(err);
-        });
-      });
+          reject(err)
+        })
+      })
     },
   },
-};
+}

@@ -1,24 +1,24 @@
 <template>
   <div>
     <page-toolbar
-        @onClick="onClick"
-        :items="toolbar_items"
+      @onClick="onClick"
+      :items="toolbar_items"
     />
 
     <UserDataTable/>
 
     <NewUserDialog
-        v-model="user_dialog"
-        @cancel="closeDialogs"
-        @save="AddUser"
+      v-model="user_dialog"
+      @cancel="closeDialogs"
+      @save="AddUser"
     />
   </div>
 </template>
 
 <script>
-  import ToolbarEvents from '../mixins/page-toolbar-events';
-  import NewUserDialog from '../components/Users/NewUserDialog';
-  import UserDataTable from '../components/Users/UsersDataTable';
+  import ToolbarEvents from '../mixins/page-toolbar-events'
+  import NewUserDialog from '../components/Users/NewUserDialog'
+  import UserDataTable from '../components/Users/UsersDataTable'
 
   export default {
     name: 'users',
@@ -37,7 +37,7 @@
             icon: 'mdi-account-plus',
             color: 'secondary',
             onClick: () => {
-              this.user_dialog = true;
+              this.user_dialog = true
             }
           },
           {
@@ -46,7 +46,7 @@
             icon: 'mdi-pause-octagon-outline',
             color: 'warning',
             onClick: () => {
-              this.user_dialog = true;
+              this.user_dialog = true
             }
           },
           {
@@ -55,7 +55,7 @@
             icon: 'mdi-play',
             color: 'success',
             onClick: () => {
-              this.user_dialog = true;
+              this.user_dialog = true
             }
           },
           {
@@ -64,20 +64,20 @@
             icon: 'mdi-delete',
             color: 'error',
             onClick: () => {
-              this.user_dialog = true;
+              this.user_dialog = true
             }
           },
         ]
-      };
+      }
     },
     methods: {
       closeDialogs () {
-        this.user_dialog = false;
+        this.user_dialog = false
       },
       AddUser (user) {
-        console.log(user);
-        this.closeDialogs();
+        console.log(user)
+        this.closeDialogs()
       }
     }
-  };
+  }
 </script>
