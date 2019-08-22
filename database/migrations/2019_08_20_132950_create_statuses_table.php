@@ -6,28 +6,28 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateStatusesTable extends Migration
 {
-  /**
-   * Run the migrations.
-   *
-   * @return void
-   */
-  public function up()
-  {
-    Schema::create('statuses', function (Blueprint $table) {
-      $table->bigIncrements('id');
-      $table->string('value')->unique();
-      $table->integer('code')->unique();
-      $table->timestamps();
-    });
-  }
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('statuses', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('value')->unique();
+            $table->integer('code')->unique();
+            $table->timestamps();
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   *
-   * @return void
-   */
-  public function down()
-  {
-    Schema::dropIfExists('statuses');
-  }
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('statuses');
+    }
 }
