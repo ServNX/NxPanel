@@ -1,11 +1,11 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-import AuthModule from './modules/auth';
-import NavModule from './modules/navigation';
-import UsersModule from './modules/users';
+import AuthModule from './modules/auth'
+import NavModule from './modules/navigation'
+import UsersModule from './modules/users'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
@@ -13,4 +13,4 @@ export default new Vuex.Store({
     navigation: NavModule,
     users: UsersModule
   }
-});
+})

@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import store from '../vuex/store';
-import Login from '../views/Login';
+import Vue from 'vue'
+import Router from 'vue-router'
+import store from '../vuex/store'
+import Login from '../views/Login'
 
-Vue.use(Router);
+Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
@@ -15,8 +15,8 @@ const router = new Router({
       component: Login,
     },
   ]
-});
+})
 
-window.Router = router;
+window.Router = router
 
-export default router;
+export default router

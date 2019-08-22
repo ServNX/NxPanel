@@ -7,7 +7,7 @@
 <script>
   export default {
     name: 'packages'
-  };
+  }
 </script>
 
 <style scoped>
