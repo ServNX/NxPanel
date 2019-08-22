@@ -13,8 +13,13 @@ class CreateIpsTable extends Migration
      */
     public function up()
     {
-        /* IPs belongsTo Server */
-        /* Server hasMany IPs */
+        // IPs belongsTo Server
+        // Server hasMany IPs
+
+        /*
+         * Ips do NOT have to belong to a Server
+         * For example, An IP can be from another server and being used for DNS records
+         */
         Schema::create('ips', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('server_id')->unsigned();

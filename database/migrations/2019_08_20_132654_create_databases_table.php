@@ -13,8 +13,8 @@ class CreateDatabasesTable extends Migration
      */
     public function up()
     {
-        /* Database belongTo a User */
-        /* Users hasMany Databases */
+        // Database belongTo a User
+        // Users hasMany Databases
         Schema::create('databases', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();

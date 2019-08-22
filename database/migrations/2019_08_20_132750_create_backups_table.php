@@ -13,8 +13,8 @@ class CreateBackupsTable extends Migration
      */
     public function up()
     {
-        /* Backups belongTo a User */
-        /* Users hasMany Backups */
+        // Backups belongTo a User
+        // Users hasMany Backups
         Schema::create('backups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();

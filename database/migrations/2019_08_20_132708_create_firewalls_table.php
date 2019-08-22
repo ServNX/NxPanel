@@ -13,8 +13,8 @@ class CreateFirewallsTable extends Migration
      */
     public function up()
     {
-        /* Server hasMany Firewalls */
-        /* Firewall belongsTo a Server */
+        // Server hasMany Firewalls
+        // Firewall belongsTo a Server
         Schema::create('firewalls', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('server_id')->unsigned();

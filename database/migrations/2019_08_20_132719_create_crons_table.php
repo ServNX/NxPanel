@@ -13,8 +13,8 @@ class CreateCronsTable extends Migration
      */
     public function up()
     {
-        /* Cron Jobs belongTo a User */
-        /* Users hasMany Cron Jobs */
+        // Cron Jobs belongTo a User
+        // Users hasMany Cron Jobs
         Schema::create('crons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();

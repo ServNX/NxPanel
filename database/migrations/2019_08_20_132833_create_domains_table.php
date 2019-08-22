@@ -13,8 +13,8 @@ class CreateDomainsTable extends Migration
      */
     public function up()
     {
-        /* A Domain belongsTo a User */
-        /* A User hasMany Domains */
+        // A Domain belongsTo a User
+        // A User hasMany Domains
         Schema::create('domains', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
