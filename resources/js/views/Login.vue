@@ -1,17 +1,17 @@
 <template>
   <v-content>
     <v-container
-        fluid
-        fill-height
+      fluid
+      fill-height
     >
       <v-layout
-          align-center
-          justify-center
+        align-center
+        justify-center
       >
         <v-flex
-            xs12
-            sm8
-            md4
+          xs12
+          sm8
+          md4
         >
           <v-card class="elevation-12">
             <v-toolbar dark flat>
@@ -20,11 +20,11 @@
               <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                   <v-btn
-                      :href="source"
-                      icon
-                      large
-                      target="_blank"
-                      v-on="on"
+                    :href="source"
+                    icon
+                    large
+                    target="_blank"
+                    v-on="on"
                   >
                     <v-icon>mdi-code-tags</v-icon>
                   </v-btn>
@@ -34,11 +34,11 @@
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-btn
-                      icon
-                      large
-                      href="https://codepen.io/johnjleider/pen/pMvGQO"
-                      target="_blank"
-                      v-on="on"
+                    icon
+                    large
+                    href="https://codepen.io/johnjleider/pen/pMvGQO"
+                    target="_blank"
+                    v-on="on"
                   >
                     <v-icon>mdi-codepen</v-icon>
                   </v-btn>
@@ -49,18 +49,18 @@
             <v-card-text>
               <v-form>
                 <v-text-field
-                    label="Login"
-                    name="login"
-                    prepend-icon="mdi-account"
-                    type="text"
+                  label="Login"
+                  name="login"
+                  prepend-icon="mdi-account"
+                  type="text"
                 ></v-text-field>
 
                 <v-text-field
-                    id="password"
-                    label="Password"
-                    name="password"
-                    prepend-icon="mdi-lock"
-                    type="password"
+                  id="password"
+                  label="Password"
+                  name="password"
+                  prepend-icon="mdi-lock"
+                  type="password"
                 ></v-text-field>
               </v-form>
             </v-card-text>
@@ -82,9 +82,9 @@
     data () {
       return {
         source: ''
-      };
+      }
     }
-  };
+  }
 </script>
 
 <style scoped>

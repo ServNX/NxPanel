@@ -18,9 +18,9 @@ Route::post('login', 'Auth/ApiAuthController@login');
 // Protected Routes
 Route::middleware('jwt.auth')->group(function () {
 
-  // Returns the currently authenticated user object
-  Route::get('me', function () {
-    return auth('api')->user();
-  });
+    // Returns the currently authenticated user object
+    Route::get('me', function () {
+        return auth('api')->user();
+    });
 
 });

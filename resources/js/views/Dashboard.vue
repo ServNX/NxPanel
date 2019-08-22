@@ -1,8 +1,8 @@
 <template>
   <div>
     <page-toolbar
-        @onClick="onClick"
-        :items="toolbar_items"
+      @onClick="onClick"
+      :items="toolbar_items"
     />
 
     <component :is="component"/>
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-  import ToolbarEvents from '../mixins/page-toolbar-events';
-  import Graphs from './Graphs';
-  import Statistics from './Statistics';
-  import Logs from './Logs';
+  import ToolbarEvents from '../mixins/page-toolbar-events'
+  import Graphs from './Graphs'
+  import Statistics from './Statistics'
+  import Logs from './Logs'
 
   export default {
     name: 'dashboard',
@@ -28,7 +28,7 @@
             icon: 'mdi-chart-bell-curve',
             color: 'accent',
             onClick: () => {
-              this.component = Graphs;
+              this.component = Graphs
             }
           },
           {
@@ -37,7 +37,7 @@
             icon: 'mdi-poll',
             color: 'pink accent-4',
             onClick: () => {
-              this.component = Statistics;
+              this.component = Statistics
             }
           },
           {
@@ -45,11 +45,11 @@
             item: 'Logs',
             icon: 'mdi-library-books',
             onClick: () => {
-              this.component = Logs;
+              this.component = Logs
             }
           },
         ]
-      };
+      }
     }
-  };
+  }
 </script>

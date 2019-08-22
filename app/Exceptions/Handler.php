@@ -33,7 +33,7 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param \Exception $exception
+     * @param  \Exception  $exception
      * @return void
      */
     public function report(Exception $exception)
@@ -41,36 +41,36 @@ class Handler extends ExceptionHandler
         parent::report($exception);
     }
 
-  /**
-   * Render an exception into an HTTP response.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @param  \Exception  $exception
-   * @return \Illuminate\Http\Response
-   */
-  public function render($request, Exception $exception)
-  {
-    if ($exception instanceof UnauthorizedHttpException) {
-      $preException = $exception->getPrevious();
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, Exception $exception)
+    {
+        if ($exception instanceof UnauthorizedHttpException) {
+            $preException = $exception->getPrevious();
 
-      if ($preException instanceof TokenExpiredException) {
-        return response()->json(['error' => 'TOKEN_EXPIRED']);
-      } else {
-        if ($preException instanceof TokenInvalidException) {
-          return response()->json(['error' => 'TOKEN_INVALID']);
-        } else {
-          if ($preException instanceof TokenBlacklistedException) {
-            return response()->json(['error' => 'TOKEN_BLACKLISTED']);
-          }
+            if ($preException instanceof TokenExpiredException) {
+                return response()->json(['error' => 'TOKEN_EXPIRED']);
+            } else {
+                if ($preException instanceof TokenInvalidException) {
+                    return response()->json(['error' => 'TOKEN_INVALID']);
+                } else {
+                    if ($preException instanceof TokenBlacklistedException) {
+                        return response()->json(['error' => 'TOKEN_BLACKLISTED']);
+                    }
+                }
+            }
         }
-      }
-    }
 
-    if ($exception->getMessage() === 'Token not provided') {
-      return response()->json(['error' => 'Token not provided']);
-    }
+        if ($exception->getMessage() === 'Token not provided') {
+            return response()->json(['error' => 'Token not provided']);
+        }
 
-    return parent::render($request, $exception);
-  }
+        return parent::render($request, $exception);
+    }
 
 }
