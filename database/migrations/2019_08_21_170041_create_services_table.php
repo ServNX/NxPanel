@@ -29,11 +29,6 @@ class CreateServicesTable extends Migration
             $table->integer('uptime')->default(0);
             $table->timestamps();
         });
-
-        Schema::table('services', function (Blueprint $table) {
-            $table->foreign('server_id')->references('id')->on('servers');
-            $table->foreign('status_id')->references('id')->on('statuses');
-        });
     }
 
     /**

@@ -61,6 +61,21 @@ class CreateInitialForeignKeys extends Migration
             $table->foreign('server_id')->references('id')->on('servers');
             $table->foreign('template_type_id')->references('id')->on('template_types');
         });
+
+        Schema::table('packages', function (Blueprint $table) {
+            $table->foreign('web_template_id')->references('id')->on('templates');
+            $table->foreign('dns_template_id')->references('id')->on('templates');
+            $table->foreign('backend_template_id')->references('id')->on('templates');
+        });
+
+        Schema::table('services', function (Blueprint $table) {
+            $table->foreign('server_id')->references('id')->on('servers');
+            $table->foreign('status_id')->references('id')->on('statuses');
+        });
+
+        Schema::table('ips', function (Blueprint $table) {
+            $table->foreign('server_id')->references('id')->on('servers');
+        });
     }
 
     /**

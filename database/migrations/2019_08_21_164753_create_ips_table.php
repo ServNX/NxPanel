@@ -21,10 +21,6 @@ class CreateIpsTable extends Migration
             $table->string('value');
             $table->timestamps();
         });
-
-        Schema::table('ips', function (Blueprint $table) {
-            $table->foreign('server_id')->references('id')->on('servers');
-        });
     }
 
     /**

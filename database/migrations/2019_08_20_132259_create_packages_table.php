@@ -41,12 +41,6 @@ class CreatePackagesTable extends Migration
 
             $table->timestamps();
         });
-
-        Schema::table('packages', function (Blueprint $table) {
-            $table->foreign('web_template_id')->references('id')->on('templates');
-            $table->foreign('dns_template_id')->references('id')->on('templates');
-            $table->foreign('backend_template_id')->references('id')->on('templates');
-        });
     }
 
     /**
