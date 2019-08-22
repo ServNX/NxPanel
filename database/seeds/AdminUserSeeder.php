@@ -13,10 +13,10 @@ class AdminUserSeeder extends Seeder
   public function run()
   {
     $admin = new User();
-    $admin->name = env('ADMIN_NAME');
-    $admin->username = env('ADMIN_USERNAME');
-    $admin->email = env('ADMIN_EMAIL');
-    $admin->password = bcrypt(env('ADMIN_PASSWORD'));
+      $admin->name = config('install.admin_name');
+      $admin->username = config('install.admin_username');
+      $admin->email = config('install.admin_email');
+      $admin->password = bcrypt(config('install.admin_password'));
     $admin->status_id = 0;
     $admin->server_id = 0;
     $admin->save();
