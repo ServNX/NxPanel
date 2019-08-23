@@ -56,11 +56,6 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Server::class);
     }
 
-    public function server()
-    {
-        return $this->belongsTo(Server::class);
-    }
-
     public function status()
     {
         return $this->belongsTo(Status::class);
