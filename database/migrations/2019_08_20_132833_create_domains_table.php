@@ -18,6 +18,10 @@ class CreateDomainsTable extends Migration
         Schema::create('domains', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
+            $table->string('ns_one');
+            $table->string('ns_two');
+            $table->string('ns_three')->nullable();
+            $table->string('ns_four')->nullable();
             $table->timestamps();
         });
     }
