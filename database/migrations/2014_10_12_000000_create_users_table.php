@@ -13,13 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        /* User belongsTo a Server */
-        /* Server hasMany Users */
-        /* User belongsTo Status */
+        // User belongsTo a Server
+        // Server hasMany Users
+        // User belongsTo Status
+        // Status hasMany Users
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('status_id')->unsigned();
-            $table->bigInteger('server_id')->unsigned();
+            $table->unsignedBigInteger('status_id');
+            $table->unsignedBigInteger('server_id');
             $table->string('name');
             $table->string('username');
             $table->string('email')->unique();

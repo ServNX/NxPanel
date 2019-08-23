@@ -13,11 +13,15 @@ class CreateMailsTable extends Migration
      */
     public function up()
     {
-        /* Mail belongsTo Domain */
-        /* Domains hasMany Mail */
+        // Mail belongsTo Domain
+        // Domains hasMany Mail
+        // Mail belongsTo Service
+        // Service hasMany Mail
         Schema::create('mails', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
+            $table->unsignedBigInteger('domain_id');
+            $table->unsignedBigInteger('service_id');
+            $table->string('catch_all')->default('/dev/null');
             $table->timestamps();
         });
     }

@@ -13,14 +13,22 @@ class CreateWebsitesTable extends Migration
      */
     public function up()
     {
-        /* Website belongTo a Domain */
-        /* Domains hasOne Website */
-        /* Website belongsTo Template */
-        /* Template hasMany Websites */
+        // Website belongTo a Domain
+        // Domains hasOne Website
+        // Website belongsTo Template
+        // Template hasMany Websites
+        // Website belongsTo an Ip
+        // Ip hasMany Websites
+        // Website belongsTo a Service
+        // Service hasMany Websites
         Schema::create('websites', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
-            $table->bigInteger('template_id')->unsigned();
+            $table->unsignedBigInteger('domain_id');
+            $table->unsignedBigInteger('template_id');
+            $table->unsignedBigInteger('ip_id');
+            $table->unsignedBigInteger('service_id');
+            $table->string('description')->nullable();
+            $table->unsignedInteger('disk_quota')->default(0); // 0 = unlimited
             $table->timestamps();
         });
     }

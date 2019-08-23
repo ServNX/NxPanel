@@ -13,11 +13,14 @@ class CreateBackupsTable extends Migration
      */
     public function up()
     {
-        /* Backups belongTo a User */
-        /* Users hasMany Backups */
+        // Backups belongTo a User
+        // Users hasMany Backups
         Schema::create('backups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedInteger('size');
+            $table->string('path');
+            $table->unsignedInteger('downloads')->default(0);
             $table->timestamps();
         });
     }

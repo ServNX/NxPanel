@@ -10,4 +10,14 @@ class Firewall extends Model
     {
         return $this->belongsTo(Server::class);
     }
+
+    public function ip()
+    {
+        return $this->belongsTo(Ip::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

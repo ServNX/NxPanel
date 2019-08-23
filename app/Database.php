@@ -10,4 +10,9 @@ class Database extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
 }

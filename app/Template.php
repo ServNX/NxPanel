@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Template extends Model
 {
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
+
     public function server()
     {
         return $this->belongsTo(Server::class);
