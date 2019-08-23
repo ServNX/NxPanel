@@ -16,6 +16,7 @@ class CreateServicesTable extends Migration
         // Service belongsTo Server
         // Server hasMany Services
         // Service belongsTo Status
+        // Status hasMany Service
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('server_id')->unsigned();

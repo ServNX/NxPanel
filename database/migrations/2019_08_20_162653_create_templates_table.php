@@ -16,6 +16,7 @@ class CreateTemplatesTable extends Migration
         // Template belongsTo a Server
         // Server hasMany Templates
         // Template belongsTo TemplateType
+        // TemplateType hasMany Templates
         Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('server_id')->unsigned();

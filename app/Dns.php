@@ -11,6 +11,11 @@ class Dns extends Model
         return $this->hasOneThrough(User::class, Domain::class);
     }
 
+    public function ip()
+    {
+        return $this->belongsTo(Ip::class);
+    }
+
     public function service()
     {
         return $this->belongsTo(Service::class);

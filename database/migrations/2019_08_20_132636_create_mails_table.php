@@ -15,6 +15,8 @@ class CreateMailsTable extends Migration
     {
         // Mail belongsTo Domain
         // Domains hasMany Mail
+        // Mail belongsTo Service
+        // Service hasMany Mail
         Schema::create('mails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('domain_id')->unsigned();

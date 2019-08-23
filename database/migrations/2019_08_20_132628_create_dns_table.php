@@ -17,6 +17,10 @@ class CreateDnsTable extends Migration
         // Domains hasMany Dns
         // Dns belongsTo Template
         // Template hasMany Dns
+        // Dns belongsTo Ip
+        // Ip hasMany Dns
+        // Dns belongsTo Service
+        // Service hasMany Dns
         Schema::create('dns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('domain_id')->unsigned();

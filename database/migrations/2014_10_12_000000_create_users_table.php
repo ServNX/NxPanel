@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         // User belongsTo a Server
         // Server hasMany Users
         // User belongsTo Status
+        // Status hasMany Users
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('status_id')->unsigned();

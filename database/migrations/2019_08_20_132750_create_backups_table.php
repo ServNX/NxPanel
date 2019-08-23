@@ -18,6 +18,9 @@ class CreateBackupsTable extends Migration
         Schema::create('backups', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
+            $table->integer('size');
+            $table->string('path');
+            $table->integer('downloads')->default(0);
             $table->timestamps();
         });
     }

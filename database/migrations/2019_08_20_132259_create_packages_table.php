@@ -13,6 +13,8 @@ class CreatePackagesTable extends Migration
      */
     public function up()
     {
+        // Package belongsTo Templates
+        // Templates hasMany Packages
         Schema::create('packages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('web_template_id')->unsigned();
