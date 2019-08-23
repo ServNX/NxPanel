@@ -21,9 +21,9 @@ class CreateFirewallsTable extends Migration
         // Ip hasMany Firewalls
         Schema::create('firewalls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
-            $table->bigInteger('ip_id')->unsigned();
+            $table->unsignedBigInteger('server_id');
+            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('ip_id');
             $table->string('action');
             $table->string('protocol');
             $table->string('port'); // type string to support range and comma separated values

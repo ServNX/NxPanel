@@ -22,7 +22,7 @@ class CreateIpsTable extends Migration
          */
         Schema::create('ips', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('server_id')->nullable();
             $table->string('value');
             $table->timestamps();
         });

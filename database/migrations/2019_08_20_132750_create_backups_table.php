@@ -17,10 +17,10 @@ class CreateBackupsTable extends Migration
         // Users hasMany Backups
         Schema::create('backups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->integer('size');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedInteger('size');
             $table->string('path');
-            $table->integer('downloads')->default(0);
+            $table->unsignedInteger('downloads')->default(0);
             $table->timestamps();
         });
     }

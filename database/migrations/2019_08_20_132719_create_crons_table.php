@@ -17,7 +17,7 @@ class CreateCronsTable extends Migration
         // Users hasMany Cron Jobs
         Schema::create('crons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
             $table->string('command');
 
             // Defaults to every hour

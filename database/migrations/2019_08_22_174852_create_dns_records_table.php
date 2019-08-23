@@ -19,8 +19,8 @@ class CreateDnsRecordsTable extends Migration
         // DnsType hasMany DnsRecords
         Schema::create('dns_records', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('dns_id')->unsigned();
-            $table->bigInteger('dns_type_id')->unsigned(); // A or AAAA ... etc
+            $table->unsignedBigInteger('dns_id');
+            $table->unsignedInteger('dns_type_id'); // A, AAAA ... etc
             $table->string('record');
             $table->string('value');
             $table->timestamps();

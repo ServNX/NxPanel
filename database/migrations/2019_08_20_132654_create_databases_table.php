@@ -19,8 +19,8 @@ class CreateDatabasesTable extends Migration
         // Service hasMany Databases
         Schema::create('databases', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('service_id');
             $table->string('user');
             $table->string('host');
             $table->string('password');

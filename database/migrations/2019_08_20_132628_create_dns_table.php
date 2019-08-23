@@ -23,12 +23,12 @@ class CreateDnsTable extends Migration
         // Service hasMany Dns
         Schema::create('dns', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
-            $table->bigInteger('template_id')->unsigned();
-            $table->bigInteger('ip_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
+            $table->unsignedBigInteger('domain_id');
+            $table->unsignedBigInteger('template_id');
+            $table->unsignedBigInteger('ip_id');
+            $table->unsignedBigInteger('service_id');
             $table->date('expires')->default(now()->addYear());
-            $table->integer('ttl')->default(14400);
+            $table->unsignedInteger('ttl')->default(14400);
             $table->timestamps();
         });
     }

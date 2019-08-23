@@ -23,12 +23,12 @@ class CreateWebsitesTable extends Migration
         // Service hasMany Websites
         Schema::create('websites', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
-            $table->bigInteger('template_id')->unsigned();
-            $table->bigInteger('ip_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
+            $table->unsignedBigInteger('domain_id');
+            $table->unsignedBigInteger('template_id');
+            $table->unsignedBigInteger('ip_id');
+            $table->unsignedBigInteger('service_id');
             $table->string('description')->nullable();
-            $table->integer('disk_quota')->default(0); // 0 = unlimited
+            $table->unsignedInteger('disk_quota')->default(0); // 0 = unlimited
             $table->timestamps();
         });
     }

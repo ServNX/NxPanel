@@ -19,8 +19,8 @@ class CreateMailsTable extends Migration
         // Service hasMany Mail
         Schema::create('mails', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('domain_id')->unsigned();
-            $table->bigInteger('service_id')->unsigned();
+            $table->unsignedBigInteger('domain_id');
+            $table->unsignedBigInteger('service_id');
             $table->string('catch_all')->default('/dev/null');
             $table->timestamps();
         });

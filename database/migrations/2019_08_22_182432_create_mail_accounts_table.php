@@ -17,10 +17,10 @@ class CreateMailAccountsTable extends Migration
         // Mail hasMany MailAccounts
         Schema::create('mail_accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('mail_id')->unsigned();
+            $table->unsignedBigInteger('mail_id');
             $table->string('account');
             $table->string('password');
-            $table->integer('disk_quota')->default(0); // 0 = unlimited
+            $table->unsignedInteger('disk_quota')->default(0); // 0 = unlimited
             $table->timestamps();
         });
     }
