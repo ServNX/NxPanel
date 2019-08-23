@@ -20,7 +20,7 @@ class CreateDnsRecordsTable extends Migration
         Schema::create('dns_records', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('dns_id');
-            $table->unsignedInteger('dns_type_id'); // A, AAAA ... etc
+            $table->unsignedBigInteger('dns_type_id'); // A, AAAA ... etc
             $table->string('record');
             $table->string('value');
             $table->timestamps();
