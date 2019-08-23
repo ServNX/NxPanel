@@ -13,13 +13,14 @@ class CreateTemplatesTable extends Migration
      */
     public function up()
     {
-        /* Template belongsTo a Server */
-        /* Server hasMany Templates */
-        /* Template belongsTo TemplateType */
+        // Template belongsTo a Server
+        // Server hasMany Templates
+        // Template belongsTo TemplateType
+        // TemplateType hasMany Templates
         Schema::create('templates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('server_id')->unsigned();
-            $table->bigInteger('template_type_id')->unsigned();
+            $table->unsignedBigInteger('server_id');
+            $table->unsignedBigInteger('template_type_id');
             $table->timestamps();
         });
     }

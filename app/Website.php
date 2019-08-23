@@ -11,6 +11,11 @@ class Website extends Model
         return $this->hasOneThrough(User::class, Domain::class);
     }
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
     public function domain()
     {
         return $this->belongsTo(Domain::class);
@@ -19,5 +24,10 @@ class Website extends Model
     public function template()
     {
         return $this->belongsTo(Template::class);
+    }
+
+    public function ip()
+    {
+        return $this->belongsTo(Ip::class);
     }
 }

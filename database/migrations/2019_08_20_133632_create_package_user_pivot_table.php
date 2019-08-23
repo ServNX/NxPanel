@@ -13,12 +13,12 @@ class CreatePackageUserPivotTable extends Migration
      */
     public function up()
     {
-        /* Many to Many Pivot Table */
-        /* Users can belongsToMany Packages */
-        /* Packages belongsToMany Users */
+        // Many to Many Pivot Table
+        // Users can belongsToMany Packages
+        // Packages belongsToMany Users
         Schema::create('package_user', function (Blueprint $table) {
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('package_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('package_id');
         });
     }
 

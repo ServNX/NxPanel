@@ -13,11 +13,20 @@ class CreateCronsTable extends Migration
      */
     public function up()
     {
-        /* Cron Jobs belongTo a User */
-        /* Users hasMany Cron Jobs */
+        // Cron Jobs belongTo a User
+        // Users hasMany Cron Jobs
         Schema::create('crons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->unsignedBigInteger('user_id');
+            $table->string('command');
+
+            // Defaults to every hour
+            $table->string('minute')->default('0');
+            $table->string('hour')->default('*');
+            $table->string('day')->default('*');
+            $table->string('month')->default('*');
+            $table->string('day_of_week')->default('*');
+
             $table->timestamps();
         });
     }
