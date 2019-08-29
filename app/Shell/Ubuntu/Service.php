@@ -29,7 +29,7 @@ class Service implements ServiceContract
         return true;
     }
 
-    protected function systemCtlFor(String $service, String $command)
+    protected function systemCtlFor(String $service, String $command): bool
     {
         $e = shell_exec('sudo systemctl '.$command.' '.$service);
         if ($e === null) {
