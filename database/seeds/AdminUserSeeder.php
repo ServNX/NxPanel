@@ -12,13 +12,15 @@ class AdminUserSeeder extends Seeder
      */
     public function run()
     {
+        $password = config('install.admin_password');
+
         $admin = new User();
         $admin->name = config('install.admin_name');
         $admin->username = config('install.admin_username');
         $admin->email = config('install.admin_email');
-        $admin->password = bcrypt(config('install.admin_password'));
-        $admin->status_id = 0;
-        $admin->server_id = 0;
+        $admin->password = $password ? bcrypt($password) : null;
+        $admin->status_id = 1;
+        $admin->server_id = 1;
         $admin->save();
     }
 }
