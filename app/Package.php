@@ -15,19 +15,4 @@ class Package extends Model
     {
         return $this->hasOneThrough(Server::class, User::class);
     }
-
-    public function webTemplate()
-    {
-        return $this->belongsTo(Template::class);
-    }
-
-    public function dnsTemplate()
-    {
-        return $this->belongsTo(Template::class);
-    }
-
-    public function backendTemplate()
-    {
-        return $this->belongsTo(Template::class);
-    }
 }

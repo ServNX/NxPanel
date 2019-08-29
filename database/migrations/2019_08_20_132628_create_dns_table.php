@@ -24,7 +24,6 @@ class CreateDnsTable extends Migration
         Schema::create('dns', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('domain_id');
-            $table->unsignedBigInteger('template_id');
             $table->unsignedBigInteger('ip_id');
             $table->unsignedBigInteger('service_id');
             $table->date('expires')->default(now()->addYear());
