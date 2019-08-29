@@ -20,9 +20,4 @@ class Server extends Model
     {
         return $this->hasMany(Ip::class);
     }
-
-    public function templates()
-    {
-        return $this->hasMany(Template::class);
-    }
 }

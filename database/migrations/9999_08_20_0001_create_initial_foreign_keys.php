@@ -27,7 +27,6 @@ class CreateInitialForeignKeys extends Migration
 
         Schema::table('dns', function (Blueprint $table) {
             $table->foreign('domain_id')->references('id')->on('domains');
-            $table->foreign('template_id')->references('id')->on('templates');
             $table->foreign('ip_id')->references('id')->on('ips');
             $table->foreign('service_id')->references('id')->on('services');
         });
@@ -66,14 +65,11 @@ class CreateInitialForeignKeys extends Migration
         });
 
         Schema::table('templates', function (Blueprint $table) {
-            $table->foreign('server_id')->references('id')->on('servers');
-            $table->foreign('template_type_id')->references('id')->on('template_types');
+            //
         });
 
         Schema::table('packages', function (Blueprint $table) {
-            $table->foreign('web_template_id')->references('id')->on('templates');
-            $table->foreign('dns_template_id')->references('id')->on('templates');
-            $table->foreign('backend_template_id')->references('id')->on('templates');
+            //
         });
 
         Schema::table('services', function (Blueprint $table) {
