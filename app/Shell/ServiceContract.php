@@ -4,6 +4,10 @@ namespace App\Shell;
 
 interface ServiceContract
 {
+    public function enable(String $service): bool;
+
+    public function disable(String $service): bool;
+
     public function start(String $service): bool;
 
     public function stop(String $service): bool;

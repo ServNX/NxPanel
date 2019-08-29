@@ -19,7 +19,7 @@ class Service implements ServiceContract
         return isset($m[2]) ? $m[2] : '-';
     }
 
-    protected function execCmdFor(String $service, String $command): bool
+    protected function monitCmdFor(String $service, String $command): bool
     {
         $e = shell_exec('sudo monit '.$command.' '.$service);
         if ($e !== null) {
@@ -29,19 +29,39 @@ class Service implements ServiceContract
         return true;
     }
 
+    protected function systemCtlFor(String $service, String $command)
+    {
+        $e = shell_exec('sudo systemctl '.$command.' '.$service);
+        if ($e === null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function enable(String $service): bool
+    {
+        return $this->systemCtlFor($service, 'enable');
+    }
+
+    public function disable(String $service): bool
+    {
+        return $this->systemCtlFor($service, 'disable');
+    }
+
     public function start(String $service): bool
     {
-        return $this->execCmdFor($service, 'start');
+        return $this->monitCmdFor($service, 'start');
     }
 
     public function stop(String $service): bool
     {
-        return $this->execCmdFor($service, 'stop');
+        return $this->monitCmdFor($service, 'stop');
     }
 
     public function restart(String $service): bool
     {
-        return $this->execCmdFor($service, 'restart');
+        return $this->monitCmdFor($service, 'restart');
     }
 
     public function status(String $service): string
