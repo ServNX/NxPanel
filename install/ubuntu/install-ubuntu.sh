@@ -119,10 +119,10 @@ fi
 echo # Line Break
 
 steps=(
-users_groups
-dash
-apparmor
-mysql
+  users_groups
+  dash
+  apparmor
+  mysql
 )
 
 for step in "${steps[@]}"; do
