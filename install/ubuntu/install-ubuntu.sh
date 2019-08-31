@@ -82,7 +82,7 @@ if [ ! -f "/root/.continue" ]; then
 
   # Update and Upgrade the system
   apt-get -qq update
-  apt-get -q upgrade # single -q will not assume -y, it may prompt user
+  apt-get -qq upgrade
   success 'OK'
 
   # Promt to Reboot
