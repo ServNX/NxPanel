@@ -101,5 +101,5 @@ error() {
 
 fatal() {
   error "Fatal: $1"
-  return 1
+  exit 1
 }
