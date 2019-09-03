@@ -27,25 +27,25 @@ if [ ! -f "/root/.continue" ]; then
   # Create Install backup directory
   mkdir -p "${backups}"
 
-  header 'Admin user and group' 'We are checking to see if the admin user and group exists'
-  # Check admin user account
-  info 'Checking admin user ...'
-  if [ ! -z "$(grep ^admin: /etc/passwd)" ]; then
-    warning 'admin user already exists'
-    info 'Removing admin account ...'
-    chattr -i /home/admin/conf >/dev/null 2>&1
-    userdel -f admin >/dev/null 2>&1
-    chattr -i /home/admin/conf >/dev/null 2>&1
-    mv -f /home/admin "${backups}/home/" >/dev/null 2>&1
+  header 'nxpanel user and group' 'We are checking to see if the nxpanel user and group exists'
+  # Check nxpanel user account
+  info 'Checking nxpanel user ...'
+  if [ ! -z "$(grep ^nxpanel: /etc/passwd)" ]; then
+    warning 'nxpanel user already exists'
+    info 'Removing nxpanel account ...'
+    chattr -i /home/nxpanel/conf >/dev/null 2>&1
+    userdel -f nxpanel >/dev/null 2>&1
+    chattr -i /home/nxpanel/conf >/dev/null 2>&1
+    mv -f /home/nxpanel "${backups}/home/" >/dev/null 2>&1
     rm -f /tmp/sess_* >/dev/null 2>&1
   fi
 
-  # Check admin group
-  info 'Checking admin group ...'
-  if [ ! -z "$(grep ^admin: /etc/group)" ]; then
-    warning 'admin group already exists'
-    info 'Removing admin group ...'
-    groupdel admin >/dev/null 2>&1
+  # Check nxpanel group
+  info 'Checking nxpanel group ...'
+  if [ ! -z "$(grep ^nxpanel: /etc/group)" ]; then
+    warning 'nxpanel group already exists'
+    info 'Removing nxpanel group ...'
+    groupdel nxpanel >/dev/null 2>&1
   fi
   success 'OK'
 
