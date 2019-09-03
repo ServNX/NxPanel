@@ -1,0 +1,26 @@
+# Comment Lines begin with a # like this one
+
+deb http://de.archive.ubuntu.com/ubuntu/ bionic main restricted
+deb http://de.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+deb http://de.archive.ubuntu.com/ubuntu/ bionic universe
+deb http://de.archive.ubuntu.com/ubuntu/ bionic-updates universe
+deb http://de.archive.ubuntu.com/ubuntu/ bionic multiverse
+deb http://de.archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+deb http://de.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu bionic-security main restricted
+deb http://security.ubuntu.com/ubuntu bionic-security universe
+deb http://security.ubuntu.com/ubuntu bionic-security multiverse
+# deb-src http://security.ubuntu.com/ubuntu bionic-security multiverse
+# deb cdrom:[Ubuntu-Server 18.04 LTS _Bionic Beaver_ - Release amd64 (20180425.1)]/ bionic main restricted
+# deb cdrom:[Ubuntu-Server 18.04 LTS _Bionic Beaver_ - Release amd64 (20180425.1)]/ bionic main restricted
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic main restricted
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic universe
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic-updates universe
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic multiverse
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic-updates multiverse
+# deb-src http://de.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
+# deb http://archive.canonical.com/ubuntu bionic partner
+# deb-src http://archive.canonical.com/ubuntu bionic partner
+# deb-src http://security.ubuntu.com/ubuntu bionic-security main restricted
+# deb-src http://security.ubuntu.com/ubuntu bionic-security universe
